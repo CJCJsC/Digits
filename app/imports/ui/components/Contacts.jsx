@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const Contacts = ({ stuff }) => (
-  <tr>
-    <td>{stuff.name}</td>
-    <td>{stuff.quantity}</td>
-    <td>{stuff.condition}</td>
-    <td>
-      <Link to={`/edit/${stuff._id}`}>Edit</Link>
-    </td>
-  </tr>
+const Contacts = ({ contact }) => (
+  <Card>
+    <Card.Header>
+      <Image src={contact.image} width{75} />
+      <Card.Title>{contact.firstName} {contact.lastName}</Card.Title>
+      <Card.Subtitle>{contact.address}</Card.Subtitle>
+    </Card.Header>
+    <Card.Body>
+      <Card.Text>{contact.description}</Card.Text>
+    </Card.Body>
+  </Card>
 );
 
 // Require a document to be passed to this component.
@@ -21,6 +23,7 @@ Contacts.propTypes = {
     quantity: PropTypes.number,
     condition: PropTypes.string,
     _id: PropTypes.string,
+    description: Proptypes.string,
   }).isRequired,
 };
 
