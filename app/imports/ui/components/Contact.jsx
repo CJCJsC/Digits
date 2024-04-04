@@ -42,6 +42,6 @@ Contact.propTypes = {
     createdAt: PropTypes.instanceOf(Date),
     _id: PropTypes.string,
   })),
-}; 
+};
 
 export default Contact;
