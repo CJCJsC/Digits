@@ -8,7 +8,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
 import { Stuffs } from '../../api/stuff/Stuff';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Contacts from '../components/Contacts';
+import Contacts from '../components/Contact';
 
 const bridge = new SimpleSchema2Bridge(Stuffs.schema);
 
